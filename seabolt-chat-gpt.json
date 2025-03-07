@@ -1,0 +1,61 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:us-west-1:767397756202:task-definition/seabolt-chat-gpt:2",
+  "containerDefinitions": [
+    {
+      "name": "seabolt-chat-gpt-1",
+      "image": "767397756202.dkr.ecr.us-west-1.amazonaws.com/seabolt-chat-gpt.latest",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "name": "seabolt-chat-gpt-1-8080-tcp",
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "systemControls": []
+    }
+  ],
+  "family": "seabolt-chat-gpt",
+  "taskRoleArn": "arn:aws:iam::767397756202:role/ecsFullAccess",
+  "executionRoleArn": "arn:aws:iam::767397756202:role/ecsFullAccess",
+  "networkMode": "awsvpc",
+  "revision": 2,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": ["EC2"],
+  "requiresCompatibilities": ["EC2"],
+  "cpu": "1024",
+  "memory": "1024",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "registeredAt": "2025-03-07T22:04:51.532Z",
+  "registeredBy": "arn:aws:iam::767397756202:root",
+  "enableFaultInjection": false,
+  "tags": []
+}
