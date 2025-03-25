@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc && nodemon dist"
+    "dev": "tsc && nodemon dist",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
