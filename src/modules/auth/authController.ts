@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import UserModel from "../../models/user";
 import SessionModel from "../../models/session";
 import { hashPassword, comparePasswords } from "../../utils/encryption";
+import { NODE_ENV } from "../../environment";
 
 export async function signUp(
   req: Request<
@@ -56,8 +57,8 @@ export async function logIn(
 
   res.cookie("session-token", session._id, {
     httpOnly: false,
-    secure: false,
-    sameSite: "none", // TODO fix
+    secure: NODE_ENV === "production",
+    sameSite: NODE_ENV === "production" ? "none" : "lax",
     maxAge: 24 * 60 * 60 * 100, // 24 hours
   });
 
